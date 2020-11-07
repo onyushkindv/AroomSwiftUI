@@ -16,23 +16,18 @@ struct RowCatalog: View {
     
     var buttonColor: String = "#e51717"
     let fontColor: String = "#494949"
-    
-    
-//    init(objectModel: ObjectModel, isLast: Bool) {
-//        self.objectModel = objectModel
-//        self.isLast = isLast
-//    }
+
     
     var body: some View {
         VStack{
-//            AsyncImage(loader: ImageLoaderCache.shared.load(image: objectModel!.preview!))
+            //AsyncImage(loader: ImageLoaderCache.shared.load(image: objectModel.preview!))
 //                .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width*0.5625)
-            Carousel(data: objectModel.images ?? [], buttonColor: buttonColor)
+            SingleImage(image: objectModel.preview!)
                 
             HStack{
                 VStack(alignment: .leading){
                     Text(objectModel.title).foregroundColor(Color(hex: fontColor)).padding(.bottom, 1)
-                    Text("100500 ₽")
+                    Text("\(objectModel.price!.description) ₽")
                         .fontWeight(.medium)
                         .padding(.top, 0)
                 }
@@ -61,8 +56,8 @@ struct RowCatalog: View {
     }
 }
 
-//struct RowCatalog_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RowCatalog(objectModel: ObjectModel(id: 1, title:  "new Elrment", subtitle: nil, vendorCode: "123gf45", price: 12200, oldPrice: nil, preview: ImageM(id: 1, name: "div", url: "https://images3.alphacoders.com/106/thumb-1920-1069102.jpg"), images: nil, objectIos: nil, objectIosId: 1, factory: nil, category: nil, parameters: nil, favorite: true), isLast: false)
-//    }
-//}
+struct RowCatalog_Previews: PreviewProvider {
+    static var previews: some View {
+        RowCatalog(objectModel: ObjectModel(id: 1, title:  "new Elrment", subtitle: nil, vendorCode: "123gf45", price: 12200, oldPrice: nil, preview: ImageM(id: 1, name: "div", url: "https://images3.alphacoders.com/106/thumb-1920-1069102.jpg"), images: nil, objectIos: nil, objectIosId: 1, factory: nil, category: nil, parameters: nil, favorite: true), isLast: false)
+    }
+}

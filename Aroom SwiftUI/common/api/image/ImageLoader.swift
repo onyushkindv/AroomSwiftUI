@@ -17,8 +17,9 @@ class ImageLoader: ObservableObject{
     init(url: URL?) {
         self.url = url
         
-        $url
-            .flatMap{ path -> AnyPublisher<UIImage?, Never> in
+        
+        
+        $url.flatMap{ path -> AnyPublisher<UIImage?, Never> in
             return self.fetch(url: url)
         }
         .assign(to: \.image, on: self)
@@ -46,4 +47,5 @@ class ImageLoader: ObservableObject{
         }
     }
 }
+
 

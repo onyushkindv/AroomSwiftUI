@@ -20,6 +20,7 @@
 		1102DCAF254CB6A4004A0B83 /* CatalogModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1102DCAE254CB6A4004A0B83 /* CatalogModelView.swift */; };
 		1109F543254F5BD30080EEE0 /* ObjectModelEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1109F542254F5BD30080EEE0 /* ObjectModelEndpoint.swift */; };
 		1117B920254721D300C9E623 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1117B91F254721D300C9E623 /* ColorExtension.swift */; };
+		113B517B25574946003C20FC /* SingleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 113B517A25574946003C20FC /* SingleImage.swift */; };
 		117B4D382550658200D86B04 /* ImageLoaderCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117B4D372550658200D86B04 /* ImageLoaderCache.swift */; };
 		117B4D3C2551AE6B00D86B04 /* CatogoryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117B4D3B2551AE6B00D86B04 /* CatogoryList.swift */; };
 		117B4D4225542BBB00D86B04 /* CategoryApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 117B4D4125542BBB00D86B04 /* CategoryApi.swift */; };
@@ -56,6 +57,7 @@
 		1102DCAE254CB6A4004A0B83 /* CatalogModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogModelView.swift; sourceTree = "<group>"; };
 		1109F542254F5BD30080EEE0 /* ObjectModelEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObjectModelEndpoint.swift; sourceTree = "<group>"; };
 		1117B91F254721D300C9E623 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		113B517A25574946003C20FC /* SingleImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleImage.swift; sourceTree = "<group>"; };
 		117B4D372550658200D86B04 /* ImageLoaderCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderCache.swift; sourceTree = "<group>"; };
 		117B4D3B2551AE6B00D86B04 /* CatogoryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatogoryList.swift; sourceTree = "<group>"; };
 		117B4D4125542BBB00D86B04 /* CategoryApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryApi.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 				11D3E526254DA74D000112F2 /* RowCatalog.swift */,
 				117B4D3B2551AE6B00D86B04 /* CatogoryList.swift */,
 				11BD76C52544E703008FB853 /* carousel */,
+				113B517A25574946003C20FC /* SingleImage.swift */,
 			);
 			path = component;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				11E295702541CB960072A1B3 /* SceneDelegate.swift in Sources */,
 				1102DC9B254C49C0004A0B83 /* ObjectFile.swift in Sources */,
 				117B4D4225542BBB00D86B04 /* CategoryApi.swift in Sources */,
+				113B517B25574946003C20FC /* SingleImage.swift in Sources */,
 				1102DCAF254CB6A4004A0B83 /* CatalogModelView.swift in Sources */,
 				117B4D4B2554688E00D86B04 /* CategoryLoader.swift in Sources */,
 				1109F543254F5BD30080EEE0 /* ObjectModelEndpoint.swift in Sources */,

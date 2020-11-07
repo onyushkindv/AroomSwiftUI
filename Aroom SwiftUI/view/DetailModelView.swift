@@ -13,14 +13,11 @@ struct DetailModelView: View {
     
         
     var objectModel: ObjectModel
-//    @Binding var count : Int64?
     
     var buttonColor: String = "#e51717"
     let fontColor: String = "#494949"
 
-//    init(objectModel: ObjectModel) {
-//        self.objectModel = objectModel
-//    }
+
     
     var body: some View {
             ZStack(alignment: .bottom){
@@ -82,9 +79,7 @@ struct DetailModelView: View {
                                 })
                             }
                         }.padding(.horizontal, 16).padding(.vertical, 5).padding(.bottom, 15)
-                        
-//
-                        
+
                         if let params = objectModel.parameters {
                             ForEach(Array(params.enumerated()), id: \.offset){ idx, parameter in
                                 HStack{

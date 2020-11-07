@@ -12,6 +12,7 @@ import Combine
 class CategoryLoader: ObservableObject {
     @Published var categories = [Category]()
     @Published var error: ApiError?
+    @Published var current: Category? = nil
     
     func loadCategory(endpoint: CategoryEndpoint) {
         CategorylApi.shared.fetchCetegory(endpoint: endpoint)

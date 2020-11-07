@@ -10,13 +10,12 @@ import SwiftUI
 
 struct CatogoryList: View {
     
-    @StateObject private var categoryLoader = CategoryLoader()
-    @State private var current: Category? = nil
+    @EnvironmentObject var categoryLoader: CategoryLoader
     @Binding var currentId: Int64?
     
     var body: some View {
         VStack(spacing: 10){
-            if let category = current {
+            if let category = categoryLoader.current {
                 HStack{
                     Text(category.name).foregroundColor(Color(hex: "#494949"))
                     Button(action: {
@@ -54,14 +53,15 @@ struct CatogoryList: View {
             return Alert(title: Text("NetworkError"), message: Text(error.localizedDescription), dismissButton: .default(Text("Ok")))
         }
         .onAppear(perform: {
-            loadCategory(nil)
-        }).padding(0)
+            loadCategory(self.categoryLoader.current)
+        })
+        .padding(0)
 
     }
     
     private func loadCategory(_ parent: Category?) {
         categoryLoader.loadCategory(endpoint: .categoryList(parent: parent?.id))
-        self.current = parent
+        self.categoryLoader.current = parent
         self.currentId = parent?.id
     }
     

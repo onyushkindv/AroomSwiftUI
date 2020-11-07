@@ -11,27 +11,28 @@ import Combine
 
 struct RowCatalog: View {
     
-    var objectModel: ObjectModel?
-    var isLast: Bool?
+    var objectModel: ObjectModel
+    var isLast: Bool
     
     var buttonColor: String = "#e51717"
     let fontColor: String = "#494949"
     
     
-    init(objectModel: ObjectModel, isLast: Bool) {
-        self.objectModel = objectModel
-        self.isLast = isLast
-    }
+//    init(objectModel: ObjectModel, isLast: Bool) {
+//        self.objectModel = objectModel
+//        self.isLast = isLast
+//    }
     
     var body: some View {
         VStack{
-            AsyncImage(loader: ImageLoaderCache.shared.load(image: objectModel!.preview!))
-                .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width*0.5625)
+//            AsyncImage(loader: ImageLoaderCache.shared.load(image: objectModel!.preview!))
+//                .frame(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width*0.5625)
+            Carousel(data: objectModel.images ?? [], buttonColor: buttonColor)
             
                 
             HStack{
                 VStack(alignment: .leading){
-                    Text(objectModel?.title ?? "---").foregroundColor(Color(hex: fontColor)).padding(.bottom, 1)
+                    Text(objectModel.title).foregroundColor(Color(hex: fontColor)).padding(.bottom, 1)
                     Text("100500 ₽")
                         .fontWeight(.medium)
                         .padding(.top, 0)

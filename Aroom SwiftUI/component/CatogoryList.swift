@@ -10,8 +10,9 @@ import SwiftUI
 
 struct CatogoryList: View {
     
-    @StateObject private var categoryLoader = CategoryLoader()
-    @State private var current: Category? = nil
+    @EnvironmentObject var categoryLoader: CategoryLoader
+    
+    @State var current: Category? = nil
     @Binding var currentId: Int64?
     
     var body: some View {

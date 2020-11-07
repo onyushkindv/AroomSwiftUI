@@ -12,12 +12,11 @@ struct CatogoryList: View {
     
     @EnvironmentObject var categoryLoader: CategoryLoader
     
-    @State var current: Category? = nil
     @Binding var currentId: Int64?
     
     var body: some View {
         VStack(spacing: 10){
-            if let category = current {
+            if let category = categoryLoader.currentCategory {
                 HStack{
                     Text(category.name).foregroundColor(Color(hex: "#494949"))
                     Button(action: {
@@ -55,14 +54,14 @@ struct CatogoryList: View {
             return Alert(title: Text("NetworkError"), message: Text(error.localizedDescription), dismissButton: .default(Text("Ok")))
         }
         .onAppear(perform: {
-            loadCategory(nil)
+            loadCategory(categoryLoader.currentCategory)
         }).padding(0)
 
     }
     
     private func loadCategory(_ parent: Category?) {
         categoryLoader.loadCategory(endpoint: .categoryList(parent: parent?.id))
-        self.current = parent
+        self.categoryLoader.currentCategory = parent
         self.currentId = parent?.id
     }
     

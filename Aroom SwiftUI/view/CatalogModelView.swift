@@ -23,19 +23,16 @@ struct CatalogModelView: View {
                 }
                 ScrollView{
                     LazyVStack{
-                        if let objects = objectModelLoader.objects {
-                            ForEach(Array(objects.enumerated()), id: \.offset) {idx, object in
-                                
-                                NavigationLink(destination: DetailModelView(objectModel: object)){
-                                    RowCatalog(objectModel: object, isLast: true).listRowInsets(EdgeInsets())
-                                }
-                                .buttonStyle(PlainButtonStyle())
-                                .onAppear(perform: {
-                                    if objects.count>2 && idx==objects.count-2 {
-                                        objectModelLoader.loadMoreObjectModels()
-                                    }
-                                })
+                        ForEach(Array(objectModelLoader.objects.enumerated()), id: \.offset) {idx, object in
+                            NavigationLink(destination: DetailModelView(objectModel: object)){
+                                RowCatalog(objectModel: object, isLast: true).listRowInsets(EdgeInsets())
                             }
+                            .buttonStyle(PlainButtonStyle())
+                            .onAppear(perform: {
+                                if objectModelLoader.objects.count>2 && idx==objectModelLoader.objects.count-2 {
+                                    objectModelLoader.loadMoreObjectModels()
+                                }
+                            })
                         }
                     }
                     
